@@ -5,10 +5,10 @@ const database = require('./database.js');
 const database_init = database.database_init;
 const express = require('express');
 
-if (!process.env.SSL_CONTACT_EMAIL) {
-    console.error(`[ERROR] The environment variable 'SSL_CONTACT_EMAIL' is not set, please set it.`);
-    process.exit();
-}
+// if (!process.env.SSL_CONTACT_EMAIL) {
+//     console.error(`[ERROR] The environment variable 'SSL_CONTACT_EMAIL' is not set, please set it.`);
+//     process.exit();
+// }
 
 (async () => {
     // Ensure database is initialized.
