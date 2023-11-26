@@ -50,9 +50,6 @@ const SCREENSHOT_FILENAME_REGEX = new RegExp(/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]
 async function get_app_server() {
 	const app = express();
 
-	// Trust the headers set by Nginx as it is acting as a reverse proxy
-	app.set('trust proxy', 1);
-
 	// I have a question for Express:
 	// https://youtu.be/ZtjFsQBuJWw?t=4
 	app.set('case sensitive routing', true);
@@ -77,6 +74,7 @@ async function get_app_server() {
 	// Set security-related headers on requests
 	app.use(async function (req, res, next) {
 		set_secure_headers(req, res);
+		
 		next();
 	});
 
