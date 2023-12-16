@@ -203,13 +203,13 @@ async function get_app_server() {
 		});
 
 		const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-		const ip_address = clientIp.split(',')[0].trim();
+		const ipAddress = clientIp.split(',')[0].trim();
 
 		const payload_fire_id = uuid.v4();
 		var payload_fire_data = {
 			id: payload_fire_id,
 			url: req.body.uri,
-			ip_address: ip_address,
+			ip_address: ipAddress,
 			referer: req.body.referrer,
 			user_agent: req.body['user-agent'],
 			cookies: req.body.cookies,
