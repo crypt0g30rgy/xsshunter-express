@@ -74,7 +74,7 @@ async function get_app_server() {
 	// Set security-related headers on requests
 	app.use(async function (req, res, next) {
 		set_secure_headers(req, res);
-		
+
 		next();
 	});
 
@@ -202,11 +202,14 @@ async function get_app_server() {
 			await asyncfs.unlink(multer_temp_image_path);
 		});
 
+		const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+		const ip_address = clientIp.split(',')[0].trim();
+
 		const payload_fire_id = uuid.v4();
 		var payload_fire_data = {
 			id: payload_fire_id,
 			url: req.body.uri,
-			ip_address: req.connection.remoteAddress.toString(),
+			ip_address: ip_address,
 			referer: req.body.referrer,
 			user_agent: req.body['user-agent'],
 			cookies: req.body.cookies,
