@@ -17,7 +17,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-jsonschema": "^1.1.6",
-    "greenlock-express": "^4.0.3",
     "keygrip": "^1.1.0",
     "memorystore": "^1.6.6",
     "moment": "^2.29.1",

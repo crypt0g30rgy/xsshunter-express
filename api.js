@@ -29,8 +29,8 @@ var sessions_settings_object = {
     duration: 7 * 24 * 60 * 60 * 1000, // Default session time is a week
     activeDuration: 1000 * 60 * 5, // Extend for five minutes if actively used
     cookie: {
-        httpOnly: true,
-        secure: true
+        httpOnly: false,
+        secure: false
     }
 }
 function session_wrapper_function(req, res, next) {

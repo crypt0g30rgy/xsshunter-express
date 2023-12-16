@@ -34,6 +34,10 @@ Finally, the following is worth considering for the security conscious:
 
 * `CONTROL_PANEL_ENABLED`: If you want to minimize the attack surface of your instance you can disable the web control panel. This makes it so you'll only receive emails of payload fires (results will still be stored on disk and in the database).
 
+### Modifications Added
+
+The code was modified to support reverse proxying via Nginx
+
 
 ### Build & Start XSS Hunter Express
 
